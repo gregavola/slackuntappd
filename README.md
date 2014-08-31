@@ -9,7 +9,7 @@ PHP 5+<br />
 CURL<br />
 
 # Getting Access to the Untappd API
-1. Head over to https://untappd.com/api and request and API key. Requests may take up to 2-3 weeks for approval, but once you get approval, add your <code>client_id</code> and <code>client_secret</code> to the <code>beer.php</code> file on line 26 and 27
+1. Head over to https://untappd.com/api and request and API key. Requests may take up to 2-3 weeks for approval, but once you get approval, add your <code>client_id</code> and <code>client_secret</code> to the <code>beer.php</code> file on <code>line 26 and 27</code>
 
 # Getting Started with Slack
 1. Upload <code>untappdPHP.php</code> and <code>beer.php</code> to your webserver.
