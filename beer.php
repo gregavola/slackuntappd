@@ -46,6 +46,12 @@ if (isset($_POST)) {
 				$beer_name = explode("Untappd", $event_json->text);
 			}
 
+			if ( empty($beer_name['1'] ) ){
+				$data["text"] = "You didn't search for anything! Please try again!";
+				echo json_encode($data);
+				exit;
+				}
+
 			$real_beer_name = trim($beer_name[1]);
 
 			$result = $ut->get("/search/beer", array("q" => $real_beer_name));
