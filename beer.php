@@ -4,11 +4,11 @@ require ("untappdPHP.php");
 
 // Function for Vowels
 function checkifvowel($string) {
-		
+
 	$v = strtolower($string[0]);
-	
+
 	$beer_name = explode(" ", $string);
-	
+
 	if (sizeof($beer_name) > 1 && strtolower($beer_name[0]) == "the")
 	{
 		return "";
@@ -40,8 +40,11 @@ if (isset($_POST)) {
 		$data["text"] = "Post is not empty, but has no results";
 
 	} else {
-		if (isset($event_json->text) && isset($event_json) && $event_json->trigger_word == "untappd") {
+		if (isset($event_json) && isset($event_json->text)) {
 			$beer_name = explode("untappd", $event_json->text);
+			if ( ! array_key_exists('1', $beer_name) ){
+				$beer_name = explode("Untappd", $event_json->text);
+			}
 
 			$real_beer_name = trim($beer_name[1]);
 
